@@ -49,7 +49,7 @@ function MatchCreate() {
   }, []);
   return (
     <div>
-      <h1 className="text-4xl font-bold text-white text-center p-4 rounded-b-xm shadow-xl mb-8 bg-[#009270]">
+      <h1 className="text-4xl font-bold text-white rounded-b-lg text-center p-4 rounded-b-xm shadow-xl mb-8 bg-[#009270]">
         Sport Scoring App
       </h1>
       <div>
