@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;800;900&family=Oxanium:wght@500&display=swap");
+
+.score-font {
+  font-family: "Oxanium", cursive;
+}
+
+.player-font {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+/* Match.css */
+
+.match-card {
+  position: relative;
+  /* width: 230px; */
+  height: auto; /* Adjust the height as needed */
+}
+
+.match-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("https://media.istockphoto.com/id/1345493117/vector/tennis-racket-icon-stock-vector-tennis-logo-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=5KLZBhn5hIDSBM_Y5lS8fgeqA8bZW4AtpuXzx0VU9mg=");
+
+  background-size: cover;
+  filter: opacity(0.1);
+  /* Adjust the blur amount as needed */
+  z-index: -1;
+}
