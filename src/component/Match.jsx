@@ -36,13 +36,17 @@ function Match({
             ) {
               return <span className="text-[#009270]">Winner</span>;
             } else {
-              return <span className="text-[#009270]"> </span>;
+              return <span className="text-[#009270]">&nbsp;</span>;
             }
           })()}
           <span>{first_player.first_name}</span>
           <span>{first_player.last_name}</span>
         </p>
-        <p className="col-span-1 mx-1 font-semibold text-sm">VS</p>
+
+        <p className="grid grid-cols-1 mx-1 font-semibold text-sm">
+          <span>&nbsp;</span>
+          <span>VS</span>
+        </p>
         <p className="grid grid-cols-1 col-span-1">
           {(() => {
             if (
@@ -51,7 +55,7 @@ function Match({
             ) {
               return <span className="text-[#009270]">Winner</span>;
             } else {
-              return <span className="text-[#009270]"> </span>;
+              return <span className="text-[#009270]">&nbsp;</span>;
             }
           })()}
           <span>{second_player.first_name}</span>

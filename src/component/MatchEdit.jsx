@@ -90,13 +90,16 @@ function MatchEdit({
             ) {
               return <span className="text-[#009270]">Winner</span>;
             } else {
-              return <span className="text-[#009270]"> </span>;
+              return <span className="text-[#009270]">&nbsp;</span>;
             }
           })()}
           <span>{first_player.first_name}</span>
           <span>{first_player.last_name}</span>
         </p>
-        <p>VS</p>
+        <p className="grid grid-cols-1">
+          <span>&nbsp;</span>
+          <span>VS</span>
+        </p>
         <p className="grid grid-cols-1">
           {(() => {
             if (
@@ -105,7 +108,7 @@ function MatchEdit({
             ) {
               return <span className="text-[#009270]">Winner</span>;
             } else {
-              return <span className="text-[#009270]"> </span>;
+              return <span className="text-[#009270]">&nbsp;</span>;
             }
           })()}
           <span>{second_player.first_name}</span>

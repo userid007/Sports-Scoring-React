@@ -11,7 +11,6 @@ function App() {
     sse.onmessage = (event) => {
       const data = JSON.parse(event.data);
       setMatch(data);
-      // setsse(data);
       console.log(match);
     };
     sse.onerror = (error) => {
