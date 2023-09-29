@@ -29,7 +29,7 @@ function MatchEdit({
 
   useEffect(() => {
     axios
-      .put(`${import.meta.env.API}/match/${id}/`, {
+      .put(`${import.meta.env.VITE_API}/match/${id}/`, {
         status: selectedOption.value,
       })
       .then((res) => {
