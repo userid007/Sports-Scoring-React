@@ -2,7 +2,6 @@ import Select from "react-select";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 function MatchCreate() {
   const handleFormSumbit = (event) => {
     event.preventDefault();
@@ -12,7 +11,7 @@ function MatchCreate() {
     data.second_player = secondPlayer.value;
     data.status = selectedOption.value;
     axios
-      .post("http://127.0.0.1:8000/api/v1/match/", data)
+      .post(`${import.meta.env.VITE_API}/match/`, data)
       .then((res) => {
         console.log(res.data);
         alert("Match Created");
@@ -36,7 +35,7 @@ function MatchCreate() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/v1/player")
+      .get(`${import.meta.env.VITE_API}/player`)
       .then((res) => {
         const player = res.data.map((p) => ({
           label: p.first_name + " " + p.last_name,

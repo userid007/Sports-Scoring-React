@@ -30,8 +30,13 @@ function Match({
       <div className="player-font my-4 w-[100%] grid px-4 grid-cols-3 items-center text-md leading-6">
         <p className="grid grid-cols-1 col-span-1">
           {(() => {
-            if (first_player_points > second_player_points && status === "completed") {
+            if (
+              first_player_points > second_player_points &&
+              status === "completed"
+            ) {
               return <span className="text-[#009270]">Winner</span>;
+            } else {
+              return <span className="text-[#009270]"> </span>;
             }
           })()}
           <span>{first_player.first_name}</span>
@@ -40,8 +45,13 @@ function Match({
         <p className="col-span-1 mx-1 font-semibold text-sm">VS</p>
         <p className="grid grid-cols-1 col-span-1">
           {(() => {
-            if (second_player_points > first_player_points && status === "completed") {
+            if (
+              second_player_points > first_player_points &&
+              status === "completed"
+            ) {
               return <span className="text-[#009270]">Winner</span>;
+            } else {
+              return <span className="text-[#009270]"> </span>;
             }
           })()}
           <span>{second_player.first_name}</span>

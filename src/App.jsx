@@ -2,13 +2,12 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import Match from "./component/Match";
 import "./App.css";
-import { json } from "react-router-dom";
 
 function App() {
   const [match, setMatch] = useState(null);
 
   useEffect(() => {
-    const sse = new EventSource("http://127.0.0.1:8000/api/v1/stream/");
+    const sse = new EventSource(`${import.meta.env.VITE_API}/stream/`);
     sse.onmessage = (event) => {
       const data = JSON.parse(event.data);
       setMatch(data);
@@ -25,7 +24,7 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/v1/match")
+      .get(`${import.meta.env.VITE_API}/match/`)
       .then((response) => {
         setMatch(response.data);
       })

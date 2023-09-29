@@ -29,7 +29,7 @@ function MatchEdit({
 
   useEffect(() => {
     axios
-      .put(`http://127.0.0.1:8000/api/v1/match/${id}/`, {
+      .put(`${import.meta.env.API}/match/${id}/`, {
         status: selectedOption.value,
       })
       .then((res) => {
@@ -42,7 +42,7 @@ function MatchEdit({
 
   const handleFirstPlayerPoints = () => {
     axios
-      .put(`http://127.0.0.1:8000/api/v1/match/${id}/`, {
+      .put(`${import.meta.env.VITE_API}/match/${id}/`, {
         points: "first",
         first_player_points: points.first,
       })
@@ -62,7 +62,7 @@ function MatchEdit({
 
   const handleSecondPlayerPoints = () => {
     axios
-      .put(`http://127.0.0.1:8000/api/v1/match/${id}/`, {
+      .put(`${import.meta.env.VITE_API}/match/${id}/`, {
         points: "second",
         second_player_points: points.second,
       })
@@ -89,6 +89,8 @@ function MatchEdit({
               status === "completed"
             ) {
               return <span className="text-[#009270]">Winner</span>;
+            } else {
+              return <span className="text-[#009270]"> </span>;
             }
           })()}
           <span>{first_player.first_name}</span>
@@ -102,6 +104,8 @@ function MatchEdit({
               status === "completed"
             ) {
               return <span className="text-[#009270]">Winner</span>;
+            } else {
+              return <span className="text-[#009270]"> </span>;
             }
           })()}
           <span>{second_player.first_name}</span>

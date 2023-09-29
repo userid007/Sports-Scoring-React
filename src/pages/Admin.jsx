@@ -7,7 +7,7 @@ function Admin() {
   const [match, setMatch] = useState(null);
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/v1/match")
+      .get(`${import.meta.env.VITE_API}/match`)
       .then((response) => {
         setMatch(response.data);
       })
